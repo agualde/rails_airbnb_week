@@ -1,9 +1,8 @@
 class FlatsController < ApplicationController
 
   def index
-    authorize @flats
     # First we filter by available booking start and end dates from the params and render all them flats
-    @flats = Flat.all
+    @flats = policy_scope(Flat)
   end
 
   def show
@@ -19,7 +18,7 @@ class FlatsController < ApplicationController
   def create
     authorize @flat
     @flat = Flat.new(flat_params)
-    @flat.users_id = current_user.id
+    @flat.user_id = current_user.id
     if @flat.save
       redirect_to dashboard_index_path
     else
