@@ -5,26 +5,56 @@
     <div class="card-header">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+      <button class="nav-link active" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Profile information</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
+      <button class="nav-link" id="bookings-tab" data-bs-toggle="tab" data-bs-target="#bookings" type="button" role="tab" aria-controls="bookings" aria-selected="false">Bookings</button>
     </li>
     <li class="nav-item" role="presentation">
-      <button class="nav-link" id="flats-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+      <button class="nav-link" id="flats-tab" data-bs-toggle="tab" data-bs-target="#flats" type="button" role="tab" aria-controls="flats" aria-selected="false">Flats</button>
     </li>
   </ul>
   <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="profile-tab">
+      <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
         <li>
           <strong>Email:</strong> <%= @user.email%>
         </li>
       </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="bookings-tab">
-
+    <div class="tab-pane fade" id="bookings" role="tabpanel" aria-labelledby="bookings-tab">
+      <% @user.bookings.each do |booking| %>
+        <div class="card bookings-card" style="width: 100%">
+            <div class="row no-gutters">
+                <div class="col-sm-2">
+                    <img class="card-img-bookings" src="https://media.istockphoto.com/vectors/first-date-calendar-vector-id1152656819?k=6&m=1152656819&s=612x612&w=0&h=XBiJawvL7OU43FYGJS2F46VHo3nTfExIxYinvLf_yGk=" alt="Image of the flat booked">
+                </div>
+                <div class="col-sm-10">
+                    <div class="card-body">
+                        <h5 class="card-title">Your booking for <em><%= booking.flat.title %></em></h5>
+                        <p class="card-text">From: <%= booking.start_date %> / To: <%= booking.end_date %> </p>
+                        <%= link_to "Delete your booking", booking_path(booking.id), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger"%>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <% end%>
     </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="flats-tab">
-
+    <div class="tab-pane fade" id="flats" role="tabpanel" aria-labelledby="flats-tab">
+      <% @user.flats.each do |flat| %>
+        <div class="card bookings-card" style="width: 100%">
+            <div class="row no-gutters">
+                <div class="col-sm-2">
+                    <img class="card-img" src="<%= flat.images %>" alt="Image of the flat booked">
+                </div>
+                <div class="col-sm-10">
+                    <div class="card-body">
+                        <h5 class="card-title"><em><%= flat.title %></em></h5>
+                        <p class="card-text"><%= flat.description %></p>
+                        <%= link_to "Delete your flat", edit_flat_path(flat.id), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger"%>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <% end%>
     </div>
   </div>
 </div>
