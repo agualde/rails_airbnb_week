@@ -1,7 +1,9 @@
 class DashboardsController < ApplicationController
+  skip_after_action :verify_policy_scoped
+
   def index
-    @bookings = Booking.where(user: current_user)
+    @user = current_user
+    @bookings = Booking.where(user_id: current_user)
     @flats = Flat.where(user: current_user)
-    @user_info = User.where(user: current_user)
   end
 end
