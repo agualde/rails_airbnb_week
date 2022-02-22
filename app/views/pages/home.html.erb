@@ -1,3 +1,21 @@
-<h1 data-controller="hello">Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
- <h1 data-target="hello.output"></h1>
+<div class="container text-center">
+  <h1>Welcome to Airbnb</h1>
+  <p></p>
+  <span data-controller="typed-js"></span>
+  <p></p>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <form action="/flats" method="get">
+        <label for="start">Start date:</label>
+        <input type="date" name="start">
+        <label for="end">End date:</label>
+        <input type="date" name="end">
+        <label for="guests">Guests:</label>
+        <input type="number" name="guests">
+        <input type="submit" class="btn btn-success">
+      </form>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
