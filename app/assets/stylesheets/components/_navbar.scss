@@ -1,12 +1,15 @@
-.navbar-lewagon {
+.navbar {
+  height: 10px;
+  display: flex;
   justify-content: space-between;
-  background: white;
+
+  ul li{
+    list-style: none;
+    margin-right: 45px;
+  }
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+#logo{
+  margin-left: 45px;
+  font-family: 'Roboto', sans-serif;
 }

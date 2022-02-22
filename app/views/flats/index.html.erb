@@ -1,24 +1,27 @@
 <div class="container">
   <h1 class="index-header my-5">Welcome to my flats!</h1>
-     <div class="row justify-content-center">
-    <% @flats.each do |flat| %>
-        <div class="flat-card col-md-2 my-3 mx-3">
+     <div class="row justify-content-center card-container">
 
-          <img class="flat-image" src="<%= flat.images %>" alt="">
+    <% @flats.each do |flat| %>
+        <div class="flat-card my-3 mx-3">
+
+          <div class="class-image" style="background-image: url(<%= flat.images %>)";>
+          </div>
 
           <div class="card-contents">
 
-            <h3><%= link_to flat.title, flat_path(flat) %></h3>
+            <h3><%= link_to flat.title, flat_path(flat), class: "btn" %></h3>
 
-            <ul>
+            <ul class="card-list">
               <li>Descrption: <%= flat.description %></li>
               <li>Address:<%= flat.address %></li>
+              <li>Guests: <%= flat.capacity %> 👤</li>
             </ul>
 
-            <div class="card-links">
+            <div class="card-links my-3">
 
-            <%= link_to "Show", flat_path(flat) %>
-            <%= link_to "Book it!", new_flat_booking_path(flat) %>
+            <%= link_to "Show", flat_path(flat), class: "btn" %>
+            <%= link_to "Book it!", new_flat_booking_path(flat), class: "btn" %>
             </div>
 
           </div>
@@ -26,5 +29,5 @@
         </div>
 
     <% end %>
-      </div>
+    </div>
 </div>
