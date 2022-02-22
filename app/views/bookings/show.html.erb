@@ -1,9 +1,10 @@
 <div class="container">
   <h1 class="booking_header my-5">Your Booking:</h1>
-<div class="flat-card my-3 mx-3">
-  <img class="class-image" src="<%= @booking.flat.images %>"/>
-          </div>
-          <h4>Your booking:</h4>
+  <div class="row">
+  <div class="flat-card my-3 mx-3">
+    <img class="class-image" src="<%= @booking.flat.images %>" style="width: 100%;"/>
+    </div>
+      <h4>Your booking:</h4>
           <div class="card-contents">
             <h3><%= @booking.flat.title %></h3>
             <ul class="card-list">
@@ -14,4 +15,5 @@
           </div>
 <%= link_to "Go back to the dashboard", dashboards_path %>
         </div>
+  </div>
 </div>
