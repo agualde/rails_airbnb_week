@@ -1,7 +1,17 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = Booking.all
+  end
+
+  def show
+    @booking = Booking.find(params[:id])
+  end
+
   def new
+    @flat = Flat.find(params[:flat_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -9,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user
 
     if @booking.save
-      redirect_to booking_show_path(@booking)
+      redirect_to  flat_booking_path(@booking)
     else
       render :new
     end

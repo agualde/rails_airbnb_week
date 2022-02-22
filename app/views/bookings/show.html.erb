@@ -1,0 +1,19 @@
+<h1>Your Booking:</h1>
+
+<div class="card-booking">
+  <%# <img src="<%= @flat.image_url %>" /> %>
+  <div class="card-booking-infos">
+    <div>
+      <h2><%= @flat.title %></h2>
+      <p><%= @flat.description %></p>
+    </div>
+    <h4 class="card-booking-dates"><%= @booking.start_date %> - <%= @booking.end_date %></h4>
+  </div class="delete_booking">
+  <%= link_to "Delete booking",
+            task_path(task),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
+
+<%= link_to "Go back to the dashboard", dashboards_path %>
