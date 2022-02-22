@@ -18,6 +18,7 @@ puts "user #{user.email} created"
 5.times do
   Flat.create!(
     title: Faker::Artist.name,
+    images: "https://picsum.photos/2000/3000?#{rand(1..10)}",
     description: Faker::Lorem.paragraph(sentence_count: 2),
     address: Faker::Address.street_address,
     capacity: rand(1...5),
