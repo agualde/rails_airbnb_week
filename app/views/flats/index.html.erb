@@ -1,18 +1,30 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      </div><h1>Welcome to my flats!</h1>
+  <h1 class="index-header my-5">Welcome to my flats!</h1>
+     <div class="row justify-content-center">
+    <% @flats.each do |flat| %>
+        <div class="flat-card col-md-2 my-3 mx-3">
 
-<div class="flat-card">
-      <% @flats.each do |flat| %>
-      <ul>
-        <li><%= flat.title %></li>
-        <li><%= flat.description %></li>
-        <li><%= flat.address %></li>
-      </ul>
-      <% end %>
+          <img class="flat-image" src="<%= flat.images %>" alt="">
 
+          <div class="card-contents">
+
+            <h3><%= link_to flat.title, flat_path(flat) %></h3>
+
+            <ul>
+              <li>Descrption: <%= flat.description %></li>
+              <li>Address:<%= flat.address %></li>
+            </ul>
+
+            <div class="card-links">
+
+            <%= link_to "Show", flat_path(flat) %>
+            <%= link_to "Book it!", new_flat_booking_path(flat) %>
+            </div>
+
+          </div>
+
+        </div>
+
+    <% end %>
+      </div>
 </div>
-
-    </div>
-  </div>
