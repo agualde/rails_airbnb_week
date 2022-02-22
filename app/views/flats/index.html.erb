@@ -5,7 +5,10 @@
     <% @flats.each do |flat| %>
         <div class="flat-card my-3 mx-3">
 
-          <div class="class-image" style="background-image: url(<%= flat.images %>)";>
+
+
+          <div>
+            <%= link_to image_tag(flat.images), flat_path(flat), class: "class-image" %>
           </div>
 
           <div class="card-contents">
@@ -13,9 +16,9 @@
             <h3><%= link_to flat.title, flat_path(flat), class: "btn" %></h3>
 
             <ul class="card-list">
-              <li>Descrption: <%= flat.description %></li>
-              <li>Address:<%= flat.address %></li>
-              <li>Guests: <%= flat.capacity %> 👤</li>
+              <li class="my-2">Descrption: <%= flat.description %></li>
+              <li class="my-2">Address:<%= flat.address %></li>
+              <li class="my-2">Guests: <%= flat.capacity %> 👤</li>
             </ul>
 
             <div class="card-links my-3">

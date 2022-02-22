@@ -8,8 +8,12 @@ h3 {
 }
 
 .class-image {
-  height: 299px;
-  background-size: cover;
+
+  img{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+  }
 }
 
 .index-header {
@@ -17,7 +21,10 @@ h3 {
 }
 
 .card-contents {
-
+  h3 {
+    border-bottom: 1px solid rgba(192, 191, 191, 0.3);
+    margin-inline: 25px;
+  }
 }
 
 .card-list {
@@ -36,5 +43,3 @@ h3 {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
 }
-
-

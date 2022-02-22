@@ -6,10 +6,20 @@
   ul li{
     list-style: none;
     margin-right: 45px;
+
   }
 }
 
 #logo{
   margin-left: 45px;
   font-family: 'Roboto', sans-serif;
+  a {
+    color: black;
+    opacity: 0.6;
+    text-decoration: none;
+  }
+
+  &:hover{
+    opacity: 0.9;
+  }
 }
