@@ -1,23 +1,27 @@
 class FlatsController < ApplicationController
 
   def index
+    authorize @flats
     # First we filter by available booking start and end dates from the params and render all them flats
-    @flats = Flat.find_by(params[LO QUE LE METAMOS])
+    @flats = Flat.all
   end
 
   def show
+    authorize @flat
     @flat = Flat.find(params[:id])
   end
 
   def new
+    authorize @flat
     @flat = Flat.new
   end
 
   def create
+    authorize @flat
     @flat = Flat.new(flat_params)
     @flat.users_id = current_user.id
     if @flat.save
-      # redirect_to dashboard_path
+      redirect_to dashboard_index_path
     else
       render :new
     end
@@ -36,7 +40,7 @@ class FlatsController < ApplicationController
   def destroy
     @flat = Flat.find(params[:id])
     @flat.destroy
-    # Redirect_to dashbord_path
+    redirect_to dashbord_index_path
   end
 
   private
