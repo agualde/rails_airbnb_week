@@ -1,0 +1,33 @@
+.carouselHome {
+  width: 50%;
+  filter: grayscale(50%);
+}
+
+.carousel-caption h5, .carousel-caption p {
+  color: white;
+}
+
+.carousel-item {
+  position: relative;
+  display: none;
+  float: left;
+  width: 100%;
+}
+
+#carouselExampleDark {
+  width: 70%;
+  max-width: 70%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.carousel-div {
+      background: rgba(0, 0, 0, 0.8); //If put against a lighter background, this will give a nice transition effect towards a lighter gray colour. This is absolutely not needed. But I suggest having at least 1 solid layer behind your opaque image.
+      }
+.carousel-div img {
+      opacity: 0.8; // This will ensure that all images will have an opacity set to 70% .
+      }
+
+.set-bacground {
+  background-color: none;
+}
