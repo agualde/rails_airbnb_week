@@ -13,6 +13,7 @@ Flat.destroy_all
 puts "DB cleaned!"
 
 user = User.create!(email: "dummy@gmail.com", password: "123456")
+Flat.create!(title: "Barcelona Flat", description:"this is a flat", address: ""
 
 puts "user #{user.email} created"
 50.times do
