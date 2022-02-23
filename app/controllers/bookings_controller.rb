@@ -29,13 +29,26 @@ class BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find([:id])
+    @booking = Booking.find(params[:id])
     @booking.destroy
+    authorize @booking
+
+    redirect_to dashboards_path
   end
+
+  def accept_booking
+    @booking = Booking.find(params[:id_booking])
+    @booking.status = "Approved"
+    authorize @booking
+    @booking.save
+
+    redirect_to dashboards_path
+  end
+
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date)
+    params.require(:booking).permit(:start_date, :end_date, :id)
   end
 end
