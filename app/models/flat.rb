@@ -9,4 +9,6 @@ class Flat < ApplicationRecord
   validates :description, length: { maximum: 1001 }
   validates :title, length: { minimum: 5 }
   validates :title, length: { maximum: 100 }
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
