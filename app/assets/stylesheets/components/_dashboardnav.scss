@@ -7,3 +7,55 @@
 a {
   text-decoration: none;
 }
+
+.nav-link {
+  color: grey;
+}
+
+li.tab-pane {
+  border-top: 10px;
+}
+
+.card-body {
+  text-align: left !important;
+}
+
+.card-img-bookings {
+  height: 140px;
+  width: 190px;
+  padding-top: 1.5px;
+  padding-left: 1.5px;
+}
+
+
+.card-img {
+  height: 140px;
+  width: 190px;
+  padding-top: 1.5px;
+  padding-left: 1.5px;
+  object-fit: center;
+}
+
+.nav-link:hover {
+  color:darkgray;
+}
+
+
+.bookings-card {
+  margin-top: 2px;
+}
+
+.btn-danger {
+  color:white;
+  background-color: rgb(255, 56, 92);
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-danger:hover {
+  color:white;
+  background-color: rgb(255, 56, 92);
+  border: none;
+  border-radius: 5px;
+  transform: scale(1.1);
+}
