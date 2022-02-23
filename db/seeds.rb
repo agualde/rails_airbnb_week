@@ -15,7 +15,7 @@ puts "DB cleaned!"
 user = User.create!(email: "dummy@gmail.com", password: "123456")
 
 puts "user #{user.email} created"
-5.times do
+50.times do
   Flat.create!(
     title: Faker::Artist.name,
     images: "https://picsum.photos/2000/3000?#{rand(1..10)}",
