@@ -3,6 +3,12 @@ class FlatsController < ApplicationController
   def index
     # First we filter by available booking start and end dates from the params and render all them flats
     @flats = policy_scope(Flat)
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
   end
 
   def show
