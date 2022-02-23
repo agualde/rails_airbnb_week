@@ -54,7 +54,6 @@ h3 {
   margin-inline: 25px;
   font-weight: lighter;
   height: 140px;
-  overflow: scroll;
 }
 
 .card-links {
@@ -66,6 +65,9 @@ h3 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .price-guests {
@@ -84,10 +86,12 @@ h3 {
   h3{
     a{
     color: black;
+    padding-left: 15px;
     }
   }
   a{
     color: #ed1515b5;
+    padding-right: 15px;
   }
 }
 

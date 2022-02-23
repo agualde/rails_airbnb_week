@@ -1,14 +1,58 @@
 <div class="container">
 
+              <div class="show-header">
+                <h1><%= @flat.title %></h1>
+                <div class="show-header-links">
+                <h3><%= link_to "📤", dashboards_path %></h3>
+                <h3><%= link_to "♥", dashboards_path %></h3>
+                </div>
+              </div>
 
-<h1><%= @flat.title %></h1>
+              <div class="show-images my-5">
+              <div class="show-image-div" style="background-image: url(<%= @flat.images %>);"></div>
 
+              <div class="show-grid">
+                <div class="class-image-ingrid" style="background-image: url(<%= @flat.images %>);"></div>
+                <div class="class-image-ingrid" style="background-image: url(<%= @flat.images %>);"></div>
+                <div class="class-image-ingrid" style="background-image: url(<%= @flat.images %>);"></div>
+                <div class="class-image-ingrid" style="background-image: url(<%= @flat.images %>);"></div>
+              </div>
+            </div>
 
+<div class="show-info">
+          <div class="show-contents">
+            <div class="my-show-header my-3">
+            </div>
 
+            <ul class="show-list">
+              <li class="my-2 head"><%= @flat.capacity %> <%= @flat.capacity == 1 ? "guest" : "guests" %> 👤</li>
+              <div class="show-price-guests">
+              <li class="my-2">Descrption: <%= @flat.description %></li>
+              <li class="my-2">Address: <%= @flat.address %></li>
+              <li class="my-2">€ <%= @flat.price %>/night</li>
+              </div>
+            </ul>
 
+            <div class="booking-card">
+              <ul class="booking-list">
+              <div class="price-calc">
+                <li>$52 x 7 nights</li>
+                <li>$364</li>
+              </div>
+              <div class="price-comission">
+                <li>Comision</li>
+                <li>$62</li>
+              </div>
+              <div class="total">
+                <li>Total</li>
+                <li>$426</li>
+              </div>
+              </ul>
+              <%= link_to "Book now!", new_flat_booking_path(@flat), class:"btn ",id: "btn-book" %>
+            </div>
 
-
-
+        </div>
+</div>
 
 
 </div>
