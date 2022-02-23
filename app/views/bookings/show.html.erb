@@ -23,7 +23,15 @@
             </div>
 
             <ul class="card-list">
-            <h2>Booking Confirmed</h2>
+            <h2>Booking
+            <% if @booking.status == "Approved" %>
+            <%= @booking.status %>
+            <% elsif @booking.status == "Declined"%>
+            <%= @booking.status %>
+            <%  else %>
+            <%= "Pending" %>
+            <% end %>
+            </h2>
               <li class="my-2"><%= @booking.flat.capacity %> <%= @booking.flat.capacity == 1 ? "guest" : "guests" %> 👤</li>
               <div class="price-guests">
               <li class="my-2">Descrption: <%= @booking.flat.description %></li>
