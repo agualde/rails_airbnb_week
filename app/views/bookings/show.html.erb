@@ -5,20 +5,9 @@
 
 </div>
 
-<div class="card-booking my-3 mx-3">
-  <img src="<%= @booking.flat.images %>" />
-  <div class="card-booking-infos">
-    <div>
-
-    </div>
-    <h4 class="card-booking-dates"><%= @booking.start_date %> - <%= @booking.end_date %></h4>
-  </div class="delete_booking">
-  </div>
-</div>
-<%= link_to "Go back to the dashboard", dashboard_index_path %>
 
 <div class="flat-card my-3 mx-3">
-          <div class="class-image" style="background-image: url(<%= @booking.flat.images %>)";>
+ <img class="class-image" src="<%= @booking.flat.images %>"/>
           </div>
           <div class="card-contents">
             <h3><%= @booking.flat.title %></h3>
