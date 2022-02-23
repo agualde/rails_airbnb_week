@@ -13,19 +13,18 @@ Flat.destroy_all
 puts "DB cleaned!"
 
 user = User.create!(email: "dummy@gmail.com", password: "123456")
-Flat.create!(title: "Barcelona Flat", description:"this is a flat", address: ""
+Flat.create!(title: "Barcelona Flat", description:"this is a flat", address: "")
 
 puts "user #{user.email} created"
-50.times do
-  Flat.create!(
-    title: Faker::Artist.name,
-    images: "https://picsum.photos/2000/3000?#{rand(1..10)}",
-    description: Faker::Lorem.paragraph(sentence_count: 2),
-    address: Faker::Address.street_address,
-    capacity: rand(1...5),
-    price: rand(50...500),
-    user_id: user.id
-  )
-end
+
+Flat.create!(
+  title: Faker::Artist.name,
+  images: "https://picsum.photos/2000/3000?#{rand(1..10)}",
+  description: Faker::Lorem.paragraph(sentence_count: 2),
+  address: Faker::Address.street_address,
+  capacity: rand(1...5),
+  price: rand(50...500),
+  user_id: user.id
+)
 
 puts "#{Flat.all.count} flats created"
