@@ -13,14 +13,23 @@
   </head>
 
   <body>
-    <div class="navbar mb-5">
-      <h2 id="logo" class="btn"><%= link_to "AirBnB", flats_path %></h2>
 
+    <div class="navbar mb-5">
+      <h2 id="logo" class="btn">
+      <a href="/">🏠 airbnb</a></h2>
       <ul>
         <li><%= link_to "👤", dashboards_path %></li>
       </ul>
     </div>
 
-      <%= yield %>
+    <div class="yield-container">
+          <%= yield %>
+    </div>
+
+
+    <div class="footer mt-5">
+      <h2 id="foot-logo" class="btn"><%= link_to "🏘️", home_path %></h2>
+    </div>
+
   </body>
 </html>

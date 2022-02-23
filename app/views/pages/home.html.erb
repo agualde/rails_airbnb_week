@@ -1,7 +1,12 @@
 <div class="container text-center">
-  <h1>Welcome to AirBnB 👋</h1>
-  <div class="row">
-    <div class="col-12">
+  <h1 class="mb-5">Welcome to Airbnb</h1>
+  <p></p>
+  <span data-controller="typed-js"></span>
+  <p></p>
+  <div class="row first-form">
+    <div class="col-1"></div>
+    <div class="col-10">
+
       <form action="/flats" method="get">
         <label for="location"> <strong>Location</strong></label>
         <input type="text" name="location">
@@ -11,7 +16,8 @@
         <input type="date" name="end">
         <label for="guests"><strong>Guests</strong></label>
         <input type="number" name="guests">
-        <input type="submit" class="submit-button">
+
+        <input type="submit" class="btn btn-success" id="btn-log-out" value="Go!">
       </form>
     </div>
   </div>

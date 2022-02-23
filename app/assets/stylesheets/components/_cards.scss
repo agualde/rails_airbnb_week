@@ -1,45 +1,124 @@
 .flat-card {
 padding: 0px;
-box-shadow: 0px 0px 2px rgba($color: #a5a5a575, $alpha: 0.5);
-border-radius: 4px;
+box-shadow: 0px 0px 1px rgba($color: #a5a5a575, $alpha: 0.5);
+border-radius: 5px;
 h3 {
   text-align: center;
+  width: fit-content;
+  margin-inline: auto;
+  a{
+    font-family: 'Roboto', sans-serif;
+    width: fit-content;
+  }
 }
 }
 
-.class-image {
 
+.img-container {
+  height: 335px;
+  overflow: hidden;
+  border-radius: 5px 5px 0px 0px;
+}
+
+.class-image-div {
+  height: 361px;
+  display: flex;
+  justify-content: end;
   img{
     width: 100%;
-    height: 100%;
     background-size: cover;
   }
 }
 
 .index-header {
-  text-align: center;
+  text-align: start;
+  border-bottom: 1px solid #c7c1c130;
+  width: fit-content;
 }
 
 .card-contents {
   h3 {
     border-bottom: 1px solid rgba(192, 191, 191, 0.3);
-    margin-inline: 25px;
+    margin-inline: auto;
+
+    a{
+      font-size: 20px;
+      padding: 0px;
+    }
   }
 }
 
 .card-list {
   list-style: none;
   padding: 0;
-  padding-inline: 25px;
+  margin-inline: 25px;
+  font-weight: lighter;
+  height: 140px;
+  overflow: scroll;
 }
 
 .card-links {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .card-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 16px;
+}
+
+.price-guests {
+  display: flex;
+  justify-content: space-between;
+
+  border-top: 1px solid #f1eaea;
+}
+
+.card-header {
+  background-color: #f4f4f4;
+  border-bottom: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3{
+    a{
+    color: black;
+    }
+  }
+  a{
+    color: #ed1515b5;
+  }
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.filter-box {
+
+}
+
+
+.first-form {
+  height: 25vh;
+  display: flex;
+  align-content: center;
+}
+
+#btn-log-out {
+  background-color: #72727226;
+  border-color: #d3d1d126;
+  opacity: 0.6;
+  color: white;
+  &:hover {
+  background-color: #72727226;
+  border-color: #d3d1d126;
+  color: white;
+  opacity: 1;
+  }
+
+  &:focus{
+    box-shadow: none;
+  }
 }
