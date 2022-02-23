@@ -27,8 +27,10 @@
             </div>
           </li>
         <% else %>
+        <div class="sign-in">
             <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %>
             <%= link_to "Register", new_user_registration_path, class: "dropdown-item" %>
+        </div>
         <% end %>
       </ul>
     </div>
