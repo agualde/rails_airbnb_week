@@ -17,16 +17,16 @@ class FlatsController < ApplicationController
   end
 
   def new
-    authorize @flat
     @flat = Flat.new
+    authorize @flat
   end
 
   def create
-    authorize @flat
     @flat = Flat.new(flat_params)
     @flat.user_id = current_user.id
+    authorize @flat
     if @flat.save
-      redirect_to dashboard_index_path
+      redirect_to dashboards_path
     else
       render :new
     end
