@@ -24,6 +24,8 @@ h3 {
   height: 361px;
   display: flex;
   justify-content: end;
+  background-size: cover;
+  background-position: center;
   img{
     width: 100%;
     background-size: cover;
@@ -129,7 +131,7 @@ h3 {
 
 .booking-card {
   width: 200px;
-  border-radius: 50px;
+  border-radius: 5px;
   border-color: #d3d1d126;
   justify-content: center;
 }
