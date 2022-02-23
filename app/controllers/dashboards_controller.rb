@@ -3,7 +3,8 @@ class DashboardsController < ApplicationController
 
   def index
     @user = current_user
-    @bookings = Booking.where(user_id: current_user)
-    @flats = Flat.where(user: current_user)
+    @bookings = Booking.all
+    @flats = Flat.all
   end
+
 end

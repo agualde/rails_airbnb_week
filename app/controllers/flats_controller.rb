@@ -39,7 +39,9 @@ class FlatsController < ApplicationController
   def destroy
     @flat = Flat.find(params[:id])
     @flat.destroy
-    redirect_to dashbord_index_path
+    authorize @flat
+
+    redirect_to dashboards_path
   end
 
   private

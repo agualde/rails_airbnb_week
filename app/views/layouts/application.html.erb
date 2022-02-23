@@ -18,11 +18,21 @@
       <h2 id="logo" class="btn">
       <a href="/">🏠 airbnb</a></h2>
       <ul>
-        <li><%= link_to "👤", dashboards_path %></li>
+       <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Profile", dashboards_path, class: "dropdown-item" %>
+              <%= link_to "Log Out", destroy_user_session_path, class: "dropdown-item", method: "delete" %>
+            </div>
+          </li>
+        <% else %>
+            <%= link_to "Sign in", new_user_session_path, class: "dropdown-item" %>
+            <%= link_to "Register", new_user_registration_path, class: "dropdown-item" %>
+        <% end %>
       </ul>
     </div>
-
-    <div class="yield-container">
+   <div class="yield-container">
           <%= yield %>
     </div>
 

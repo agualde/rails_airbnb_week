@@ -63,3 +63,22 @@ li.tab-pane {
   border-radius: 5px;
   transform: scale(1.1);
 }
+
+.status-pending {
+  color: yellow
+}
+
+.status-approved {
+  color: green
+}
+
+.btn-success {
+  color:white;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-success:hover {
+
+  transform: scale(1.1);
+}
