@@ -1,18 +1,11 @@
 <div class="container">
-  <h1 class="index-header my-5 pb-2">We found (<%= @flats.count %>) flats around you!</h1>
   <div class="row">
     <div class="col">
-       <li class="nav-item dropdown">
-
-            <h6 class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter by:</h6>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown" style="position: absolute;inset: 0px 0px auto auto;margin: 0px;transform: translate3d(-1140px, 45px, 0px);">
-              <%= link_to "City", dashboards_path, class: "dropdown-item" %>
-              <%= link_to "Country", destroy_user_session_path, class: "dropdown-item", method: "delete" %>
-            </div>
-          </li>
     </div>
   </div>
-    <div class="row justify-content-center card-container">
+
+  <h1 class="index-header my-5 pb-2">We found (<%= @flats.count %>) flats around you!</h1>
+     <div class="row justify-content-center card-container">
 
     <% @flats.each do |flat| %>
         <div class="flat-card my-3 mx-3">
@@ -42,8 +35,6 @@
 
         </div>
     <% end %>
-
-
-
+    
     </div>
 </div>

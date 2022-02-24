@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 2022_02_24_225748) do
     t.boolean "washer"
     t.boolean "luggage_drop_off"
     t.boolean "balcony"
+    t.integer "rooms", default: 1
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
