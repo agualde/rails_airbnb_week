@@ -6,6 +6,8 @@ class Booking < ApplicationRecord
   validates :start_date, presence: true
   validates :status, inclusion: { in: %w(Pending Approved Declined) }
   validates :guests, numericality: { only_integer: true }
+  validates :guests, presence: true
+  validates :guests, numericality: { greater_than: 0 }
 
   def validate_guests?
     self.guests <= self.flat.capacity
