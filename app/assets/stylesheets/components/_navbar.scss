@@ -4,9 +4,11 @@
   justify-content: space-between;
   position: sticky;
   top: 0px;
+  z-index: 1;
 
   ul li{
     list-style: none;
+    margin: 0;
     margin-right: 45px;
     margin-right: 45px;
     color: white;
@@ -23,10 +25,34 @@
   }
 
   &:hover{
-    opacity: 0.5;
+    opacity: 0.9;
   }
 }
 
 .sign-in {
   display: flex;
+}
+
+  #host-btn {
+  opacity: 1;
+  margin-right: 10px;
+  &:hover {
+    opacity: 0.9;
+  }
+  }
+
+#left-cluster-navbar {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+  ul {
+    margin-top: 1rem;
+    padding-left: 0;
+  }
+}
+
+
+.center {
+  display: flex;
+  justify-content: center;
 }

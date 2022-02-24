@@ -29,7 +29,7 @@
 }
 
 
-.form-inputs {
+.first-form-inputs {
   display: flex;
 }
 
@@ -51,17 +51,20 @@
   }
 }
 
-#end-date {
-  border-right: none;
-  border-left: none;
-}
-
 #start-date {
   border-right: none;
   border-left: none;
+  text-align: end;
 }
 
-#go-btn {
+#end-date {
+  border-right: none;
+  border-left: none;
+  text-align: end;
+}
+
+
+.go-btn {
     background: linear-gradient(to top right, #4ca1af 0%,#c4e0e5 100%);
     background-color: #1cbecf;
     border-color: #d3d1d126;
@@ -76,4 +79,3 @@
 .yield-container {
   background-image: url("blob.svg");
 }
-
