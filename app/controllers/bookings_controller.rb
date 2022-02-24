@@ -26,9 +26,13 @@ class BookingsController < ApplicationController
     @flat = Flat.find(params[:flat_id])
     @booking.user = current_user
     @booking.flat = @flat
-    authorize @booking
-    if @booking.save
-      redirect_to flat_booking_path(@flat, @booking)
+    if @booking.validate_guests?
+      authorize @booking
+      if @booking.save
+        redirect_to flat_booking_path(@flat, @booking)
+      else
+        render :new
+      end
     else
       render :new
     end
