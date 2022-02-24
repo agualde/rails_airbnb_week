@@ -1,15 +1,26 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    # First we filter by available booking start and end dates from the params and render all them flats
-    @flats = policy_scope(Flat).order('created_at DESC')
-    @markers = @flats.geocoded.map do |flat|
-      {
-        lat: flat.latitude,
-        lng: flat.longitude
-      }
-    end
+
+    # if params[start: nil]
+      @flats = policy_scope(Flat).order('created_at DESC')
+      @markers = @flats.geocoded.map do |flat|
+        {
+          lat: flat.latitude,
+          lng: flat.longitude
+        }
+      # end
+  #  else
+  #   @flats = policy_scope(Flat).order('created_at DESC').where("start_date LIKE #{params[:start][0..4]}")
+  #     @markers = @flats.geocoded.map do |flat|
+  #       {
+  #         lat: flat.latitude,
+  #         lng: flat.longitude
+  #       }
+
+  #   end
   end
+end
 
   def show
     @flat = Flat.find(params[:id])
