@@ -3,6 +3,7 @@
     <div class="col">
     </div>
   </div>
+
   <h1 class="index-header my-5 pb-2">We found (<%= @flats.count %>) flats around you!</h1>
      <div class="row justify-content-center card-container">
 
@@ -11,7 +12,7 @@
 
 
             <a href="<%= flat_path(flat) %>">
-              <div class="class-image-div" style="background-image: url(<%= flat.images %>);"></div>
+              <%= cl_image_tag flat.photos.last.key, height: 400, width: 343, crop: :fill, alt:"Image of the flat booked" %>
             </a>
 
           <div class="card-contents">

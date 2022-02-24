@@ -9,15 +9,15 @@
               </div>
 
               <div class="show-images my-5">
-              <div class="show-image-div" style="background-image: url(<%= @booking.flat.images %>);"></div>
-
-              <div class="show-grid">
-                <div class="class-image-ingrid" style="background-image: url(<%= @booking.flat.images %>);"></div>
-                <div class="class-image-ingrid" style="background-image: url(<%= @booking.flat.images %>);"></div>
-                <div class="class-image-ingrid" style="background-image: url(<%= @booking.flat.images %>);"></div>
-                <div class="class-image-ingrid" style="background-image: url(<%= @booking.flat.images %>);"></div>
+                <div class="show-image-div" style="background-image: url(<%= cl_image_path @booking.flat.photos.first.key %>);"></div>
+                <div class="show-grid">
+                  <% @booking.flat.photos[1..-1].each do |photo| %>
+                    <div class="class-image-grid" style="background-image:url(<%=cl_image_path photo.key%>);"></div>
+                  <% end %>
+                </div>
               </div>
-            </div>
+
+
           <div class="show-contents">
             <div class="my-show-header my-3">
             </div>
