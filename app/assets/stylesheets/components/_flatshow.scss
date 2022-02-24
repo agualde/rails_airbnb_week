@@ -7,12 +7,14 @@
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
+
 }
 
 .class-image-ingrid {
   border-radius: 4px;
   background-size: cover;
   background-position: center;
+  image-size: 100px 
 }
 
 .show-images {
