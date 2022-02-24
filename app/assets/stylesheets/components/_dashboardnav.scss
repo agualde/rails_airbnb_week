@@ -51,17 +51,15 @@ li.tab-pane {
 
 .btn-danger {
   color:white;
-  background-color: rgb(255, 56, 92);
+  background: linear-gradient(to top right, #ff627e 0%, #b83720 100%);
   border: none;
-  border-radius: 5px;
+  border-radius: 55px;
+  padding: 3px 28px;
+  font-size: 15px;
 }
 
 .btn-danger:hover {
-  color:white;
-  background-color: rgb(255, 56, 92);
-  border: none;
-  border-radius: 5px;
-  transform: scale(1.1);
+
 }
 
 .status-pending {
@@ -78,16 +76,20 @@ li.tab-pane {
   border-radius: 5px;
 }
 
-.btn-success:hover {
-
-  transform: scale(1.1);
-}
-
 .card {
   border: none;
   background-color: #fcfcfc;
 }
 
+.card-title {
+  margin: 0;
+}
+
 .card-header {
   border-bottom: none;
+}
+
+.title-edit {
+  display: flex;
+  align-items: end;
 }

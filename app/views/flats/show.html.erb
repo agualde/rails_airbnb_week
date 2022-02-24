@@ -1,8 +1,11 @@
 <div class="container">
 
               <div class="show-header">
+              <div class="d-flex">
                 <h1><%= @flat.title %></h1>
+                </div>
                 <div class="show-header-links">
+                <a href='/flats/<%= params[:id] %>/edit' class="<%= @flat.user_id == current_user.id ? "" : "d-none" %>" id="pencil">✏️</a>
                 <h3><%= link_to "📤", dashboards_path %></h3>
                 <h3><%= link_to "♥", dashboards_path %></h3>
                 </div>
@@ -48,7 +51,7 @@
                 <li>$426</li>
               </div>
               </ul>
-              <%= link_to "Book now!", new_flat_booking_path(@flat), class:"btn ",id: "btn-book" %>
+              <%= link_to "Book now!", new_flat_booking_path(@flat), class:"btn center go-btn" %>
             </div>
 
         </div>
