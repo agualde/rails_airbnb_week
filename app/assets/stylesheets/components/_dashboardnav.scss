@@ -93,3 +93,27 @@ li.tab-pane {
   display: flex;
   align-items: end;
 }
+
+.edit-profile-pencil {
+  display: flex;
+  justify-content: start;
+  transform: rotateY(180deg);
+}
+
+.big-avatar {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  justify-self: end;
+}
+
+.profile {
+  display: flex;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 45px;
+}

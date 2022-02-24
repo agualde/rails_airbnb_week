@@ -1,13 +1,13 @@
 <div class=container>
 
-    <h1 class="booking_header my-5">List a flat</h1>
-    <h4 class="booking_sub_header my-5">Become a host</h4>
-
 
 
     <div class="container">
       <div class="row">
         <div class="col-md-8 offset-md-2">
+
+    <h1 class="booking_header my-5">List a flat</h1>
+    <h4 class="booking_sub_header my-5">Become a host</h4>
 
 
 <%= simple_form_for (@flat) do |f| %>
@@ -17,15 +17,20 @@
   <div class="form-inputs">
     <%= f.input :title %>
     <%= f.input :description %>
+    <%= f.input :rooms %>
     <%= f.input :images %>
+    <div>
     <%= f.input :address %>
     <%= f.input :capacity %>
     <%= f.input :price %>
-    <div>
+    </div>
+    <div class="new-flat-booleans mb-3">
     <div>
      <%= f.input :kitchen %>
       <%= f.input :wifi %>
       <%= f.input :accept_pets %>
+       </div>
+      <div>
       <%= f.input :air_con %>
       <%= f.input :smoker_friendly %>
       <%= f.input :parking %>
@@ -34,9 +39,11 @@
       <%= f.input :pool_access %>
       <%= f.input :tv %>
       <%= f.input :washer %>
+      </div>
+      <div>
       <%= f.input :luggage_drop_off %>
       <%= f.input :balcony %>
-    </div>
+      </div>
     </div>
   </div>
 
