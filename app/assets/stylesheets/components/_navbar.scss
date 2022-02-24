@@ -1,5 +1,5 @@
 .navbar {
-  height: 10px;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   position: sticky;
@@ -8,7 +8,8 @@
   ul li{
     list-style: none;
     margin-right: 45px;
-
+    margin-right: 45px;
+    color: white;
   }
 }
 

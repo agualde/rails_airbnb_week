@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2022_02_24_123423) do
 
   # These are extensions that must be enabled in order to support this database
@@ -40,6 +41,17 @@ ActiveRecord::Schema.define(version: 2022_02_24_123423) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.boolean "accept_pets"
+    t.boolean "air_con"
+    t.boolean "kitchen"
+    t.boolean "smoker_friendly"
+    t.boolean "wifi"
+    t.boolean "parking"
+    t.boolean "pool_access"
+    t.boolean "tv"
+    t.boolean "washer"
+    t.boolean "luggage_drop_off"
+    t.boolean "balcony"
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
