@@ -62,8 +62,8 @@
                             <p class="card-text"><strong>Booking status:<%= booking.status %></strong></p>
                           <% end %>
                         <% if booking.status != "Approved" %>
-                          <%= link_to "Accept the booking", accept_booking_path(booking.id), data: { confirm: "Are you sure?" }, class:"btn btn-success"%>
-                          <%= link_to "Reject the booking", booking_path(booking.id), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger"%>
+                          <%= link_to "Accept the booking", accept_booking_path(booking.id), class:"btn btn-success"%>
+                          <%= link_to "Reject the booking", booking_path(booking.id), class:"btn btn-danger"%>
                         <% end %>
                     </div>
                 </div>
@@ -73,9 +73,6 @@
       <% end%>
     </div>
     <div class="tab-pane fade" id="flats" role="tabpanel" aria-labelledby="flats-tab">
-      <p></p>
-      <%= link_to "Add a new flat",  new_flat_path, data: { confirm: "Are you sure?" }, class:"btn btn-success", id: "btn-log-out" %>
-      <p></p>
       <% @user.flats.each do |flat| %>
         <div class="card bookings-card" style="width: 100%">
             <div class="row no-gutters">
@@ -84,7 +81,10 @@
                 </div>
                 <div class="col-sm-10">
                     <div class="card-body">
+                    <div class="title-edit">
                         <h5 class="card-title"><em><%= flat.title %></em></h5>
+                         <%= link_to "✏️", edit_flat_path(flat.id), class:"btn", id: "edit"%>
+                    </div>
                         <p class="card-text"><%= flat.description %></p>
                         <%= link_to "Delete your flat", flat_path(flat.id), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger"%>
                     </div>
@@ -94,6 +94,5 @@
       <% end%>
     </div>
   </div>
-  <%= link_to "Log Out", destroy_user_session_path, class: "btn btn-danger my-5", id: "btn-log-out", method: "delete" %>
 </div>
 </div>

@@ -48,9 +48,12 @@ ActiveRecord::Schema.define(version: 2022_02_24_225748) do
     t.bigint "flat_id", null: false
     t.date "start_date"
     t.date "end_date"
-    t.string "status"
+    t.text "status", default: "Pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "guests", default: 0
+    t.string "first_name"
+    t.string "last_name"
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
