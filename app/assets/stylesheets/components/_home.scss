@@ -1,0 +1,79 @@
+.location-div {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+}
+
+
+.start-div {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+}
+
+.end-div {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+}
+
+.guest-div {
+  display: flex;
+  flex-direction: column;
+  width: 210px;
+}
+
+.first-form {
+  flex-direction: row;
+
+}
+
+
+.form-inputs {
+  display: flex;
+}
+
+
+#form-start {
+  border-radius: 19px 0px 0px 19px;
+  border-right: none;
+}
+
+
+#form-end {
+  border-radius: 0px 19px 19px 0px;
+  border-left: none;
+}
+
+.form-control {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+#end-date {
+  border-right: none;
+  border-left: none;
+}
+
+#start-date {
+  border-right: none;
+  border-left: none;
+}
+
+#go-btn {
+    background: linear-gradient(to top right, #4ca1af 0%,#c4e0e5 100%);
+    background-color: #1cbecf;
+    border-color: #d3d1d126;
+    opacity: 0.6;
+    color: white;
+    padding: 6px 52px;
+    border-radius: 55px;
+    font-size: 20px;
+}
+
+
+.yield-container {
+  background-image: url("blob.svg");
+}
+
