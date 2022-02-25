@@ -35,6 +35,7 @@ puts "user #{user.email} created"
   address: Faker::Address.street_address,
   capacity: rand(1...5),
   price: rand(50...500),
+  rooms: rand(1..4),
   accept_pets: [true, false].sample,
   air_con: [true, false].sample,
   smoker_friendly: [true, false].sample,
