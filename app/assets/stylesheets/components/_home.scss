@@ -39,12 +39,14 @@
 #form-start {
   border-radius: 19px 0px 0px 19px;
   border-right: none;
+  height: 45px;
 }
 
 
 #form-end {
   border-radius: 0px 19px 19px 0px;
   border-left: none;
+  height: 45px;
 }
 
 .form-control {
@@ -57,12 +59,14 @@
   border-right: none;
   border-left: none;
   text-align: end;
+  height: 45px;
 }
 
 #end-date {
   border-right: none;
   border-left: none;
   text-align: end;
+  height: 45px;
 }
 
 

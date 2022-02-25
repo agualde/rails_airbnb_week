@@ -26,7 +26,11 @@
         </li>
         <ul class="profile">
         <li class="big-avatar">
-         <img src="<%= @user.profile_picture_url %>" alt="" class="big-avatar">
+        <% if current_user.profile_picture_url.nil? || current_user.profile_picture_url == ""  %>
+            <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png", class: "big-avatar" %>
+            <% else %>
+            <%=  image_tag current_user.profile_picture_url, class: "big-avatar" %>
+            <% end %>
         </li>
         <div class="info">
         <li>
