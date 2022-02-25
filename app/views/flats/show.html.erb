@@ -21,13 +21,19 @@
                 </div>
               </div>
 
+              <div class="flat-titles">
+
+            <h2>Some interesting information about the flat</h2>
+             <h4 class="my-2 head"><%= @flat.capacity %> <%= @flat.capacity == 1 ? "guest" : "guests" %> <%= icon('fa', 'user-group') %></h4>
+              <h5 class="my-2">Address: <%= @flat.address %></h5>
+            </div>
+
 <div class="show-info">
           <div class="show-contents">
             <div class="my-show-header my-3">
             </div>
 
             <ul class="show-list">
-              <li class="my-2 head"><%= @flat.capacity %> <%= @flat.capacity == 1 ? "guest" : "guests" %> 👤</li>
               <div class="show-price-guests">
               <li class="my-2">Descrption: <%= @flat.description %></li>
               <li class="my-2">Address: <%= @flat.address %></li>
