@@ -1,7 +1,8 @@
 <div class="container">
               <div class="show-header">
-              <div class="d-flex">
+              <div>
                 <h1><%= @flat.title %></h1>
+                 <h5><%= @flat.location %></h5>
                 </div>
                 <div class="show-header-links">
                 <a href='/flats/<%= params[:id] %>/edit' class="<%= @flat.user_id == current_user ? "" : "d-none" %>" id="pencil">✏️</a>

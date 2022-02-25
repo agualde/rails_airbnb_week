@@ -66,6 +66,6 @@ end
   private
 
   def flat_params
-    params.require(:flat).permit(:title, :description, :address, :capacity, :price, :rooms, photos: [])
+    params.require(:flat).permit(:title, :description, :address, :capacity, :price, :rooms, :location, photos: [])
   end
 end
