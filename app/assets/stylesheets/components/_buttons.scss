@@ -4,7 +4,6 @@
 
 #go {
   padding: 3px 24px;
-  width: 270px;
   &:hover {
     color: white;
   }
@@ -26,4 +25,8 @@
 
 .btn:hover {
   color: white;
+}
+
+#book-btn {
+  width: 270px;
 }
