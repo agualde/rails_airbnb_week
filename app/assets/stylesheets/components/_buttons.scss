@@ -30,3 +30,9 @@
 #book-btn {
   width: 270px;
 }
+
+#title-index-card {
+  &:hover {
+    color: black;
+  }
+}
