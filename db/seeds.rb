@@ -31,7 +31,7 @@ puts "user #{user.email} created"
 5.times do
   flat = Flat.create!(
   title: Faker::Artist.name,
-  description: Faker::Lorem.paragraph(sentence_count: 2),
+  description: Faker::Lorem.paragraph(sentence_count: 12),
   address: Faker::Address.street_address,
   capacity: rand(1...5),
   price: rand(50...500),

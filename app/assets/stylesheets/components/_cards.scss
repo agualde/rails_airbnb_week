@@ -57,7 +57,7 @@ h3 {
   padding: 0;
   margin-inline: 25px;
   font-weight: lighter;
-  height: 140px;
+  height: auto;
 }
 
 .card-links {
@@ -78,8 +78,6 @@ h3 {
 .price-guests {
   display: flex;
   justify-content: space-between;
-
-  border-top: 1px solid #f1eaea;
 }
 
 .my-card-header {

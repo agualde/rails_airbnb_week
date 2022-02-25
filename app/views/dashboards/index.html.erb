@@ -88,7 +88,7 @@
         <div class="card bookings-card" style="width: 100%">
             <div class="row no-gutters">
                 <div class="col-sm-2">
-                  <%= cl_image_tag flat.photos.last.key, height: 300, width: 300, crop: :fill, alt:"Image of the flat booked" %>
+                  <%= cl_image_tag flat.photos.last.key, height: 200, width: 200, crop: :fill, alt:"Image of your flat" %>
                 </div>
                 <div class="col-sm-10">
                     <div class="card-body">
@@ -97,7 +97,7 @@
                          <%= link_to "✏️", edit_flat_path(flat.id), class:"btn", id: "edit"%>
                     </div>
                         <p class="card-text"><%= flat.description %></p>
-                        <%= link_to "Delete your flat", flat_path(flat.id), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger"%>
+                        <%= link_to "Delete your flat", flat_path(flat.id), method: :delete, data: { confirm: "Are you sure?" }, class:"btn btn-danger", remote: true%>
                     </div>
                 </div>
             </div>
