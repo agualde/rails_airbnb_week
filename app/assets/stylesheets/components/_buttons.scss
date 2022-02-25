@@ -4,6 +4,9 @@
 
 #go {
   padding: 3px 24px;
+  &:hover {
+    color: white;
+  }
 }
 
 #edit {
@@ -18,4 +21,8 @@
   padding-right: 14px;
   transform: rotate(93deg);
     padding-left: 14px;
+}
+
+.btn:hover {
+  color: white;
 }
