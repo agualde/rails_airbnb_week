@@ -75,10 +75,15 @@
     padding: 6px 52px;
     border-radius: 55px;
     font-size: 20px;
+    margin-right: 200px;
 
     &:hover {
 
     }
+}
+
+h1 {
+  
 }
 
 
@@ -109,3 +114,9 @@
 
 }
 
+#blob {
+  position: absolute;
+  top:50px;
+  z-index: -1;
+  width: 1000px;
+}
