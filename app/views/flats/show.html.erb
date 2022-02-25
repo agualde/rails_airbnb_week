@@ -38,8 +38,8 @@
             <div class="booking-card">
               <ul class="booking-list">
               <div class="price-calc mb-3">
-                <li>$<%= @flat.price %> x <%= $total == 0 ? 1 : ($end - $start).to_i %> nights</li>
-                <li>$<%= total = @flat.price * ($total == 0 ? 1 : $total ).to_i %></li>
+                <li>$<%= @flat.price %> x <%= $total.to_i %> <%= $total.to_i == 1 ? "night" : "nights" %> </li>
+                <li>$<%= total = @flat.price * $total.to_i %></li>
               </div>
               <div class="price-comission mb-3">
                 <li>Comission</li>
