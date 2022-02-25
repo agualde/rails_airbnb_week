@@ -99,7 +99,7 @@
 .booking-list {
   list-style: none;
   padding: 0;
-  width: 260px;
+  padding-inline: 19px;
 }
 
 .price-calc {
@@ -111,6 +111,7 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 16px;
+  width: 238px;
 }
 
 .total {
