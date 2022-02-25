@@ -4,6 +4,9 @@
 
 #go {
   padding: 3px 24px;
+  &:hover {
+    color: white;
+  }
 }
 
 #edit {
@@ -20,6 +23,7 @@
     padding-left: 14px;
 }
 
+
 .heart-icon-default {
  color: #c3bbbb54;
  &:hover {
@@ -29,4 +33,11 @@
 
 .heart-icon-activated {
   color: #ed1515b5;
+
+.btn:hover {
+  color: white;
+}
+
+#book-btn {
+  width: 270px;
 }
