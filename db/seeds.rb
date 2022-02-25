@@ -46,7 +46,7 @@ puts "user #{user.email} created"
   washer: [true, false].sample,
   luggage_drop_off: [true, false].sample,
   balcony: [true, false].sample,
-  user_id: user.id
+  user_id: user.id,
   )
 
   file1 = URI.open(photos.sample)
