@@ -75,19 +75,21 @@
     padding: 6px 52px;
     border-radius: 55px;
     font-size: 20px;
-    margin-right: 200px;
 
     &:hover {
 
     }
 }
 
-h1 {
-  
+#btn-margin {
+  margin-right: 200px;
 }
 
+h1 {
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
 
-
+}
 
 .yield-container {
   background-image: url("blob.svg");
