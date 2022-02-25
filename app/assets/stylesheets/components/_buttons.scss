@@ -23,6 +23,17 @@
     padding-left: 14px;
 }
 
+
+.heart-icon-default {
+ color: #c3bbbb54;
+ &:hover {
+  color: #ed1515b5;
+ }
+}
+
+.heart-icon-activated {
+  color: #ed1515b5;
+
 .btn:hover {
   color: white;
 }
