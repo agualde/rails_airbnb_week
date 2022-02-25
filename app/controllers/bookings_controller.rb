@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:new, :create]
-
   def index
     @bookings = Booking.all
     @markers = @bookings.geocoded.map do |booking|
