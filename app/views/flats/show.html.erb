@@ -8,16 +8,15 @@
                 </div>
               </div>
 
-              <div class="show-images my-5">
-              <div class="show-image-div" style="background-image: url(<%= @flat.images %>);"></div>
 
-              <div class="show-grid">
-                <div class="class-image-ingrid" style="background-image: url(<%= @flat.images %>);"></div>
-                <div class="class-image-ingrid" style="background-image: url(<%= @flat.images %>);"></div>
-                <div class="class-image-ingrid" style="background-image: url(<%= @flat.images %>);"></div>
-                <div class="class-image-ingrid" style="background-image: url(<%= @flat.images %>);"></div>
+              <div class="show-images my-5">
+                <div class="show-image-div" style="background-image: url(<%= cl_image_path @flat.photos.first.key %>);"></div>
+                <div class="show-grid">
+                  <% @flat.photos[1..-1].each do |photo| %>
+                    <div class="class-image-grid" style="background-image:url(<%=cl_image_path photo.key%>);"></div>
+                  <% end %>
+                </div>
               </div>
-            </div>
 
 <div class="show-info">
           <div class="show-contents">
@@ -51,7 +50,7 @@
               <%= link_to "Book now!", new_flat_booking_path(@flat), class:"btn ",id: "btn-book" %>
             </div>
         </div>
-        <div></div>
+        div
           <div class="flat-features">
           <h6>What this place offers:</h6>
             <div><%= icon('fa', 'hat-chef') %>   - Kitchen Facilities</div>
