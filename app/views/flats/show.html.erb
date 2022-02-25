@@ -23,7 +23,11 @@
               <div class="flat-titles">
 
             <h2>Some interesting information about the flat</h2>
-             <h4 class="my-2 head"><%= @flat.capacity %> <%= @flat.capacity == 1 ? "guest" : "guests" %> <%= icon('fa', 'user-group') %></h4>
+            <div>
+              <h6 class="my-2 head"><%= @flat.capacity %> <%= @flat.capacity == 1 ? "guest" : "guests" %> 👤</h6>
+              <h6 class="my-2 head"><%= @flat.rooms %> <%= @flat.rooms == 1 ? "room" : "rooms" %> <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/available-room-1-501679.png" alt="" class="rooms"> </h6>
+            </div>
+  
               <h5 class="my-2">Address: <%= @flat.address %></h5>
             </div>
 
@@ -84,15 +88,6 @@
           </div>
           </div>
 
-<div class="row">
-<div class="col-2"></div>
-<div class="col-8" style="width: ; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-  <div class="col-2"></div>
-</div>
-</div>
 
 
 </div>
