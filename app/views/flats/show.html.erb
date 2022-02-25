@@ -5,7 +5,7 @@
                 <h1><%= @flat.title %></h1>
                 </div>
                 <div class="show-header-links">
-                <a href='/flats/<%= params[:id] %>/edit' class="<%= @flat.user_id == current_user.id ? "" : "d-none" %>" id="pencil">✏️</a>
+                <a href='/flats/<%= params[:id] %>/edit' class="<%= @flat.user_id == current_user ? "" : "d-none" %>" id="pencil">✏️</a>
                 <h3><%= link_to "📤", dashboards_path %></h3>
                 <h3><%= link_to "♥", dashboards_path %></h3>
                 </div>
@@ -16,7 +16,7 @@
                 <div class="show-image-div" style="background-image: url(<%= cl_image_path @flat.photos.first.key %>);"></div>
                 <div class="show-grid">
                   <% @flat.photos[1..-1].each do |photo| %>
-                    <div class="class-image-grid" style="background-image:url(<%=cl_image_path photo.key%>);"></div>
+                    <div class="class-image-ingrid" style="background-image:url(<%=cl_image_path photo.key%>);"></div>
                   <% end %>
                 </div>
               </div>
@@ -37,34 +37,32 @@
 
             <div class="booking-card">
               <ul class="booking-list">
-              <div class="price-calc">
-                <li>$52 x 7 nights</li>
-                <li>$364</li>
+              <div class="price-calc mb-3">
+                <li>$<%= @flat.price %> x <%= $total == 0 ? 1 : ($end - $start).to_i %> nights</li>
+                <li>$<%= total = @flat.price * ($total == 0 ? 1 : $total ).to_i %></li>
               </div>
-              <div class="price-comission">
-                <li>Comision</li>
-                <li>$62</li>
+              <div class="price-comission mb-3">
+                <li>Comission</li>
+                <li>$<%= comission = (total * 0.07).round %></li>
               </div>
-              <div class="total">
+              <div class="total my-3">
                 <li>Total</li>
-                <li>$426</li>
+                <li>$<%= total + comission %></li>
               </div>
               </ul>
-              <%= link_to "Book now!", new_flat_booking_path(@flat), class:"btn center go-btn" %>
+              <%= link_to "Book now!", new_flat_booking_path(@flat), class:"btn center go-btn mt-3" %>
             </div>
         </div>
-        div
-          <div class="flat-features">
+                      <div class="flat-features">
           <h6>What this place offers:</h6>
-            <div> <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/kitchen-1447827-1224041.png" alt="" style="width: 26px;">  <span class="default"> - Kitchen Facilities</span> </div>
-            <div><%= icon('fa', 'wifi') %>  <span class="default" >- Wifi</span></div>
-            <div> <img src="https://w7.pngwing.com/pngs/363/123/png-transparent-car-park-computer-icons-parking-garage-hotel-parking-angle-room-parking.png" alt="" style="    width: 28px;
-    height: 19px">  <span> - Parking</span></div>
-            <div><%= icon('fa', 'smoking') %> <span class="default"> - Smoking Friendly</span> </div>
-            <div><%= icon('fa', 'dog') %> <span class="default"> - Pet Friendly</span></div>
-            <div><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/snow-1840405-1559531.png" alt="" style="
-    width: 24px;"> <span class="default"> - Air-Conditioning</span></div>
+            <div> <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/kitchen-1447827-1224041.png" alt="" style="width: 26px;">  <span class="<%= @flat.kitchen ? "" : "line-through" %>"> - Kitchen Facilities</span> </div>
+            <div><%= icon('fa', 'wifi') %>  <span class="<%= @flat.wifi ? "" : "line-through" %>" >- Wifi</span></div>
+            <div> <img src="https://w7.pngwing.com/pngs/363/123/png-transparent-car-park-computer-icons-parking-garage-hotel-parking-angle-room-parking.png" alt="" style="width: 28px; height: 19px">  <span> - Parking</span></div>
+            <div><%= icon('fa', 'smoking') %> <span class="line-through"> - Smoker Friendly</span> </div>
+            <div><%= icon('fa', 'dog') %> <span class="<%= @flat.accept_pets ? "" : "line-through" %>"> - Pet Friendly</span></div>
+            <div><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/snow-1840405-1559531.png" alt="" style="width: 24px;"> <span class="<%= @flat.air_con ? "" : "line-through" %>"> - Air-Conditioning</span></div>
             </div>
+
 </div>
 
 <div class="row">

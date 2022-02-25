@@ -1,27 +1,15 @@
 <div class=container>
 
-    <h1 class="booking_header my-5">Create a Booking</h1>
-    <h4 class="booking_sub_header my-5">We will need to know a few thinks before proceeding</h4>
-
     <div class="container">
       <div class="row">
         <div class="col-md-8 offset-md-2">
 
+    <h1 class="booking_header my-5">Create a Booking</h1>
+    <h4 class="booking_sub_header my-5">We will need to know a few things about you</h4>
+
 <%= simple_form_for [@flat, @booking] do |f| %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-  <div>
-    <%= f.input :first_name %>
-  </div>
-
-  <div>
-    <%= f.input :last_name %>
-  </div>
-
-  <div class="form-inputs">
-    <%= f.input :guests %>
-  </div>
 
   <div class="form-inputs">
     <%= f.input :start_date %>
@@ -31,8 +19,12 @@
     <%= f.input :end_date %>
   </div>
 
+  <div class="form-inputs">
+    <%= f.input :guests %>
+  </div>
+
   <div class="form-actions">
-    <%= f.button :submit, class: "btn", id: "go-btn" %>
+    <%= f.button :submit, class: "btn btn-primary", id: "go-btn" %>
   </div>
 <% end %>
 

@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:new, :create]
 
   def index
     @bookings = Booking.all
@@ -59,7 +60,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :id)
+    params.require(:booking).permit(:start_date, :end_date, :id, :guests)
   end
 
 end
