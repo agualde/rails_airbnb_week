@@ -63,6 +63,12 @@ end
     redirect_to dashboards_path
   end
 
+  def favorite_action
+    @flat = Flat.find(params[:id])
+    @flat.update_attribute(:favorited, true)
+    redirect_to flat_path(@flat)
+  end
+
   private
 
   def flat_params
