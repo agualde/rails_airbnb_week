@@ -25,12 +25,14 @@
 
 .first-form {
   flex-direction: row;
+  margin-bottom: 50px;
 
 }
 
 
 .first-form-inputs {
   display: flex;
+  margin-bottom: 50px;
 }
 
 
@@ -65,17 +67,45 @@
 
 
 .go-btn {
-    background: linear-gradient(to top right, #4ca1af 0%,#c4e0e5 100%);
-    background-color: #1cbecf;
+    // background: linear-gradient(to top right, #4ca1af 0%,#c4e0e5 100%);
+    background-color: #695FAF;
     border-color: #d3d1d126;
-    opacity: 0.6;
+    opacity: 1;
     color: white;
     padding: 6px 52px;
     border-radius: 55px;
     font-size: 20px;
+
+    &:hover {
+
+    }
 }
+
+
 
 
 .yield-container {
   background-image: url("blob.svg");
 }
+
+#svg_home {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: end;
+  width: 700px;
+  margin-top: 20px;
+}
+
+#svg_home2 {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: end;
+  width: 700px;
+  margin-top: 20px;
+
+}
+
