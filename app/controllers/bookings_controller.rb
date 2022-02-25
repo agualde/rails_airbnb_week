@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @flat = Flat.find(params[:flat_id])
     authorize @booking
   end
 
