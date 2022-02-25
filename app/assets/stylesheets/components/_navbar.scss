@@ -19,6 +19,7 @@
 }
 
 #logo{
+  margin: 0;
   margin-left: 45px;
   font-family: 'Roboto', sans-serif;
   a {
@@ -62,4 +63,16 @@
 .center {
   display: flex;
   justify-content: center;
+}
+
+
+.dropdown-item:active {
+  background-color: none!important;
+  color: black;
+}
+
+
+#sign:active {
+  background-color: none!important;
+  color: black;
 }

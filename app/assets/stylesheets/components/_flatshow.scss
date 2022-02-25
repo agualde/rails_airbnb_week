@@ -15,7 +15,7 @@
   background-size: cover;
   background-position: center;
   box-shadow: 0 0 10px #e0d7d7;
-  image-size: 100px 
+  image-size: 100px
 
 }
 
@@ -76,11 +76,12 @@
   margin-inline: 25px;
   font-weight: lighter;
   height: 140px;
-  margin-right: 666px
+  margin-right: 435px;
 }
 
 .show-info {
   padding-bottom: 90px;
+  padding: 40px;
 }
 
 .show-contents {
@@ -88,7 +89,7 @@
 }
 
 .booking-card {
-  width: 400px;
+  width: 350px;
   margin-top: 7px;
   margin-right: 7px;
   box-shadow: 1px 1px 10px #b9b8b8;
@@ -135,4 +136,8 @@
     &:focus{
       box-shadow: none;
     }
+  }
+
+  .line-through {
+  text-decoration: line-through;
   }

@@ -2,6 +2,14 @@ class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
 
+    if params[:start].present? || params[:end].present?
+
+    $start = Date.parse(params[:start])
+    $end = Date.parse(params[:end])
+
+    $total = $end - $start
+    end
+
     # if params[start: nil]
       @flats = policy_scope(Flat).order('created_at DESC')
       @markers = @flats.geocoded.map do |flat|

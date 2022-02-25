@@ -4,7 +4,7 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-6 offset-md-3 justify-content-center">
 
     <h1 class="booking_header my-5">List a flat</h1>
     <h4 class="booking_sub_header my-5">Become a host</h4>
@@ -16,7 +16,7 @@
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.input :rooms %>
-    <%= f.input :images %>
+
     <div>
 
     <%= f.input :photos, as: :file, input_html: { multiple: true } %>
@@ -31,7 +31,7 @@
       <%= f.input :accept_pets %>
        </div>
       <div>
-      <%= f.input :air_con %>
+      <%= f.input :air_con, label: "Air conditioning" %>
       <%= f.input :smoker_friendly %>
       <%= f.input :parking %>
     </div>
