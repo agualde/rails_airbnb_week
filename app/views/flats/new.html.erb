@@ -27,9 +27,9 @@
     </div>
     <div class="new-flat-booleans mb-3">
     <div>
-     <%= f.input :kitchen %>
-      <%= f.input :wifi %>
-      <%= f.input :accept_pets %>
+     <%= f.input :kitchen, as: :boolean, checked_value: true, unchecked_value: false %>
+      <%= f.input :wifi, as: :boolean, checked_value: true, unchecked_value: false %>
+      <%= f.input :accept_pets, as: :boolean, checked_value: true, unchecked_value: false %>
        </div>
       <div>
       <%= f.input :air_con, label: "Air conditioning" %>
