@@ -69,17 +69,17 @@ ActiveRecord::Schema.define(version: 2022_02_25_125005) do
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
-    t.boolean "accept_pets", default: false
-    t.boolean "air_con", default: false
-    t.boolean "kitchen", default: false
-    t.boolean "smoker_friendly", default: false
-    t.boolean "wifi", default: false
-    t.boolean "parking", default: false
-    t.boolean "pool_access", default: false
-    t.boolean "tv", default: false
-    t.boolean "washer", default: false
-    t.boolean "luggage_drop_off", default: false
-    t.boolean "balcony", default: false
+    t.boolean "accept_pets"
+    t.boolean "air_con"
+    t.boolean "kitchen"
+    t.boolean "smoker_friendly"
+    t.boolean "wifi"
+    t.boolean "parking"
+    t.boolean "pool_access"
+    t.boolean "tv"
+    t.boolean "washer"
+    t.boolean "luggage_drop_off"
+    t.boolean "balcony"
     t.integer "rooms", default: 1
     t.string "location"
     t.index ["user_id"], name: "index_flats_on_user_id"
