@@ -8,8 +8,8 @@
                 <% if current_user.present? %>
                 <a href='/flats/<%= params[:id] %>/edit' class="<%= @flat.user_id == current_user.id ? "" : "d-none" %>" id="pencil">✏️</a>
                 <% end %>
-                <h3><%= link_to "📤", dashboards_path %></h3>
                 <h3><%= link_to "♥", dashboards_path %></h3>
+                <h3><%= link_to "📤", dashboards_path %></h3>
                 </div>
               </div>
 
