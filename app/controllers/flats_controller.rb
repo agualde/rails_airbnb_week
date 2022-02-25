@@ -2,12 +2,16 @@ class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
 
-    if params[:start].present? || params[:end].present?
+    if params[:start].present? && params[:end].present?
 
     $start = Date.parse(params[:start])
     $end = Date.parse(params[:end])
 
     $total = $end - $start
+
+    else
+      $total = 1
+
     end
 
     # if params[start: nil]
