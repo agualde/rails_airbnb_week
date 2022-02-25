@@ -1,36 +1,24 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-
     if params[:start].present? && params[:end].present?
-
-    $start = Date.parse(params[:start])
-    $end = Date.parse(params[:end])
-
-    $total = $end - $start
-
+      $start = Date.parse(params[:start])
+      $end = Date.parse(params[:end])
+      $total = $end - $start
     else
       $total = 1
-
     end
-
-    # if params[start: nil]
-      @flats = policy_scope(Flat).order('created_at DESC')
-      @markers = @flats.geocoded.map do |flat|
-        {
-          lat: flat.latitude,
-          lng: flat.longitude
-        }
-      # end
-  #  else
-  #   @flats = policy_scope(Flat).order('created_at DESC').where("start_date LIKE #{params[:start][0..4]}")
-  #     @markers = @flats.geocoded.map do |flat|
-  #       {
-  #         lat: flat.latitude,
-  #         lng: flat.longitude
-  #       }
-
-  #   end
+    @flats = policy_scope(Flat).order('created_at DESC')
+    @markers = @flats.geocoded.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    if params[:Location].present?
+      @flats = @flats.where(location: params[:Location])
+    else
+      @flats
+    end
   end
 end
 
