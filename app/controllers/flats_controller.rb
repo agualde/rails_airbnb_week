@@ -14,13 +14,13 @@ class FlatsController < ApplicationController
         lat: flat.latitude,
         lng: flat.longitude
       }
-    if params[:Location].present?
-      @flats = @flats.where(location: params[:Location])
-    else
-      @flats
+      if params[:Location].present?
+        @flats = @flats.where(location: params[:Location])
+      else
+        @flats
+      end
     end
   end
-end
 
   def show
     @flat = Flat.find(params[:id])
