@@ -29,4 +29,8 @@ class FlatPolicy < ApplicationPolicy
   def destroy?
     record.user == user
   end
+
+  def favorite?
+    record.user == user
+  end
 end

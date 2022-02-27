@@ -36,3 +36,17 @@
     color: black;
   }
 }
+
+.grey {
+color: #d1bdbdb5;
+&:hover {
+  color: #ed1515b5;
+}
+}
+
+.red {
+  color: #ed1515b5;
+  &:hover {
+    color: #ed1515b5;
+  }
+}

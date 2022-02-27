@@ -55,25 +55,9 @@ class BookingsController < ApplicationController
     redirect_to dashboards_path
   end
 
-  def favorite_booking
-    @user = current_user
-    @flat = Flat.find(parmams[:flat_id])
-    @booking = Booking.find(params[:id_booking])
-
-    if booking.favorite
-      booking.favorite = false
-    else
-      booking.favorite = true
-    end
-    authorize @booking
-    @booking.save
-
-    redirect_to dashboards_path
-  end
-
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :id, :guests, :favorite)
+    params.require(:booking).permit(:start_date, :end_date, :id, :guests)
   end
 end

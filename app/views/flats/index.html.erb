@@ -9,7 +9,7 @@
      <div class="row justify-content-center card-container">
 
     <% @flats.each do |flat| %>
-        <div class="flat-card my-3 mx-3">
+        <div class="flat-card my-3 mx-3" id="<%= flat.id %>">
 
             <a href="<%= flat_path(flat) %>">
            <div class="img-container" style="background-image: url(<%= cl_image_path flat.photos.last.key, height: 400, width: 343, crop: :fill, alt:"Image of the flat booked" %>);"></div>
@@ -18,9 +18,18 @@
           <div class="card-contents">
             <div class="my-card-header">
               <h3><%= link_to flat.title, flat_path(flat), class: "btn mt-2", id: "title-index-card" %></h3>
-              <%= link_to "♥", dashboards_path %>
-            </div>
 
+              <%= link_to "♥", flat_favorites_path(flat), method: :create, class: "grey #{@favorites.find_by(flats_id: flat).present? ? "d-none" : ""}" %>
+
+              <% if @favorites.find_by(flats_id: flat).present? %>
+
+              <%= link_to "♥",  flat_favorite_path(flat, @favorites.find_by(flats_id: flat).id), method: :patch, class: "#{ @favorites.find_by(flats_id: flat).favorite ? "red" : "grey" }" %>
+              <% else %>
+
+
+              <% end %>
+
+            </div>
             <ul class="card-list">
               <div class="price-guests">
               <li class="my-2"><%= flat.capacity %> <%= flat.capacity == 1 ? "guest" : "guests" %> 👤</li>
