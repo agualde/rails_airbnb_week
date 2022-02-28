@@ -6,5 +6,4 @@ class DashboardsController < ApplicationController
     @bookings = Booking.all
     @flats = Flat.all
   end
-
 end

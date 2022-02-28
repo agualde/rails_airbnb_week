@@ -1,6 +1,7 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
+    @favorites = Favorite.where(users_id: current_user)
     if params[:start].present? && params[:end].present?
       $start = Date.parse(params[:start])
       $end = Date.parse(params[:end])
@@ -14,13 +15,13 @@ class FlatsController < ApplicationController
         lat: flat.latitude,
         lng: flat.longitude
       }
-    if params[:Location].present?
-      @flats = @flats.where(location: params[:Location])
-    else
-      @flats
+      if params[:Location].present?
+        @flats = @flats.where(location: params[:Location])
+      else
+        @flats
+      end
     end
   end
-end
 
   def show
     @flat = Flat.find(params[:id])

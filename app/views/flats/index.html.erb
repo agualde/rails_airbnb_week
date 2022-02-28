@@ -6,9 +6,10 @@
 
 
   <h1 class="index-header my-5 pb-2">We found (<%= @flats.count %>) <%= @flats.count == 1 ? "flat" : "flats" %> around you!</h1>
+
   <div class="row justify-content-center card-container">
     <% @flats.each_with_index do |flat, index| %>
-      <div class="flat-card my-3 mx-3">
+      <div class="flat-card my-3 mx-3" id="<%= flat.id %>">
         <div id="carouselExampleDark<%= index %>" class="carousel carousel-dark slide img-container">
           <div class="carousel-inner">
             <div class="carousel-item active">
@@ -31,12 +32,23 @@
           </button>
         </div>
         <div class="card-contents">
-          <div class="my-card-header">
-            <h3><%= link_to flat.title, flat_path(flat), class: "btn mt-2", id: "title-index-card" %></h3>
-            <%= link_to "♥", dashboards_path %>
-          </div>
-          <ul class="card-list">
-            <div class="price-guests">
+        <div class="my-card-header">
+              <h3><%= link_to flat.title, flat_path(flat), class: "btn mt-2", id: "title-index-card" %></h3>
+
+              <%= link_to "♥", flat_favorites_path(flat), method: :create, class: "grey #{@favorites.find_by(flats_id: flat).present? ? "d-none" : ""}" %>
+
+              <% if @favorites.find_by(flats_id: flat).present? %>
+
+              <%= link_to "♥",  flat_favorite_path(flat, @favorites.find_by(flats_id: flat).id), method: :patch, class: "#{ @favorites.find_by(flats_id: flat).favorite ? "red" : "grey" }" %>
+              <% else %>
+
+
+              <% end %>
+
+            </div>
+            <ul class="card-list">
+              <div class="price-guests">
+
               <li class="my-2"><%= flat.capacity %> <%= flat.capacity == 1 ? "guest" : "guests" %> 👤</li>
               <li class="my-2">€ <%= flat.price %>/night</li>
             </div>

@@ -55,11 +55,9 @@ class BookingsController < ApplicationController
     redirect_to dashboards_path
   end
 
-
   private
 
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :id, :guests)
   end
-
 end

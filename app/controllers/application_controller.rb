@@ -15,7 +15,6 @@ class ApplicationController < ActionController::Base
   # end
 
   def configure_permitted_parameters
-
     devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :profile_picture_url])
   end
 
