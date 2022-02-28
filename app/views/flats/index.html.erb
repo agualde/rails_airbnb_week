@@ -35,11 +35,11 @@
         <div class="my-card-header">
               <h3><%= link_to flat.title, flat_path(flat), class: "btn mt-2", id: "title-index-card" %></h3>
 
-              <%= link_to "♥", flat_favorites_path(flat), method: :create, class: "grey #{@favorites.find_by(flats_id: flat).present? ? "d-none" : ""}" %>
+              <%= link_to "♥", flat_favorites_path(flat), method: :create, class: "grey #{@favorites.find_by(flat_id: flat).present? ? "d-none" : ""}" %>
 
-              <% if @favorites.find_by(flats_id: flat).present? %>
+              <% if @favorites.find_by(flat_id: flat).present? %>
 
-              <%= link_to "♥",  flat_favorite_path(flat, @favorites.find_by(flats_id: flat).id), method: :patch, class: "#{ @favorites.find_by(flats_id: flat).favorite ? "red" : "grey" }" %>
+              <%= link_to "♥",  flat_favorite_path(flat, @favorites.find_by(flat_id: flat).id), method: :patch, class: "#{ @favorites.find_by(flat_id: flat).favorite ? "red" : "grey" }" %>
               <% else %>
 
 

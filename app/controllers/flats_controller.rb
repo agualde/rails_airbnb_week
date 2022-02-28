@@ -1,7 +1,7 @@
 class FlatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
-    @favorites = Favorite.where(users_id: current_user)
+    @favorites = Favorite.where(user_id: current_user)
     if params[:start].present? && params[:end].present?
       $start = Date.parse(params[:start])
       $end = Date.parse(params[:end])
