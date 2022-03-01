@@ -8,7 +8,18 @@
                 <% if current_user.present? %>
                 <a href='/flats/<%= params[:id] %>/edit' class="<%= @flat.user_id == current_user.id ? "" : "d-none" %>" id="pencil">✏️</a>
                 <% end %>
-                <h3><%= link_to "♥", dashboards_path %></h3>
+                <h3>
+              <%= link_to "♥", flat_favorites_path(@flat), method: :create, class: "grey #{@favorites.find_by(flat_id: @flat).present? ? "d-none" : ""}" %>
+
+              <% if @favorites.find_by(flat_id: @flat).present? %>
+
+              <%= link_to "♥",  flat_favorite_path(@flat, @favorites.find_by(flat_id: @flat).id), method: :patch, class: "#{ @favorites.find_by(flat_id: @flat).favorite ? "red" : "grey" }" %>
+              <% else %>
+
+
+              <% end %>
+                
+                </h3>
                 <h3><%= link_to "📤", dashboards_path %></h3>
                 </div>
               </div>

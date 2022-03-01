@@ -24,6 +24,7 @@ class FlatsController < ApplicationController
   end
 
   def show
+    @favorites = Favorite.where(user_id: current_user)
     @flat = Flat.find(params[:id])
     authorize @flat
   end
