@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 2022_02_26_161251) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "guests", default: 0
+    t.string "first_name"
+    t.string "last_name"
     t.boolean "favorite", default: false
     t.index ["flat_id"], name: "index_bookings_on_flat_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
@@ -76,22 +78,21 @@ ActiveRecord::Schema.define(version: 2022_02_26_161251) do
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.float "latitude", default: 0.0
-    t.float "longitude", default: 0.0
-    t.boolean "accept_pets", default: false
-    t.boolean "air_con", default: false
-    t.boolean "kitchen", default: false
-    t.boolean "smoker_friendly", default: false
-    t.boolean "wifi", default: false
-    t.boolean "parking", default: false
-    t.boolean "pool_access", default: false
-    t.boolean "tv", default: false
-    t.boolean "washer", default: false
-    t.boolean "luggage_drop_off", default: false
-    t.boolean "balcony", default: false
+    t.float "latitude"
+    t.float "longitude"
+    t.boolean "accept_pets"
+    t.boolean "air_con"
+    t.boolean "kitchen"
+    t.boolean "smoker_friendly"
+    t.boolean "wifi"
+    t.boolean "parking"
+    t.boolean "pool_access"
+    t.boolean "tv"
+    t.boolean "washer"
+    t.boolean "luggage_drop_off"
+    t.boolean "balcony"
     t.integer "rooms", default: 1
     t.string "location"
-    t.boolean "favorited", default: false
     t.index ["user_id"], name: "index_flats_on_user_id"
   end
 
