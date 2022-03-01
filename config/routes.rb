@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   end
   resources :bookings, only: [:destroy]
   resources :dashboards, only: [:index]
+
+  get '/accept_booking/:id_booking', to: 'bookings#accept_booking', as: :accept_booking
+
 end
