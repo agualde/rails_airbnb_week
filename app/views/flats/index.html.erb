@@ -6,9 +6,10 @@
 
 
   <h1 class="index-header my-5 pb-2">We found (<%= @flats.count %>) <%= @flats.count == 1 ? "flat" : "flats" %> around you!</h1>
-
+</div>
   <div class="row justify-content-center card-container">
     <% @flats.each_with_index do |flat, index| %>
+    <div>
       <div class="flat-card my-3 mx-3" id="<%= flat.id %>">
         <div id="carouselExampleDark<%= index %>" class="carousel carousel-dark slide img-container">
           <div class="carousel-inner">
@@ -57,9 +58,10 @@
         </div>
 
       </div>
+    </div>
     <% end %>
   </div>
-</div>
+
 
 
 <% @flats.each_with_index do |flat, index| %>

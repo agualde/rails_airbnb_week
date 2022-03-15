@@ -71,9 +71,9 @@ h3 {
 
 .card-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 95px;
-  padding: 50px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding-inline: 10px;
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
