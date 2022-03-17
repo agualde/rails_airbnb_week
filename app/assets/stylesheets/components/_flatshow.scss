@@ -170,6 +170,10 @@
   .rooms {
     height: auto;
     width: 25px;
+    @media (max-width:480px) {
+      height: 14px;
+      width: auto;
+    }
   }
 
   .head {
