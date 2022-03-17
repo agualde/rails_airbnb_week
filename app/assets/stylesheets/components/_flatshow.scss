@@ -85,6 +85,9 @@
 .show-info {
   padding-bottom: 90px;
   padding: 40px;
+  @media (max-width:480px) {
+    padding-inline: 0px;
+  }
 }
 
 .show-contents {
@@ -163,4 +166,12 @@
   .head {
     padding-bottom: 8px;
     padding-right: 34px;
+  }
+
+  .flat-titles {
+    h2 {
+      @media (max-width:480px) {
+        display: none;
+      }
+    }
   }
