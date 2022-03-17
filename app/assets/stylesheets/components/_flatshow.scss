@@ -85,6 +85,10 @@
 
 .show-contents {
   display: flex;
+
+  @media (max-width:480px) {
+    display: inline;
+  }
 }
 
 .booking-card {
