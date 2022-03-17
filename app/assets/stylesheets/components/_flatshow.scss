@@ -76,6 +76,9 @@
   font-weight: lighter;
   height: 140px;
   margin-right: 435px;
+  @media (max-width:480px) {
+    width: 100%;
+  }
 }
 
 .show-info {
@@ -97,6 +100,11 @@
   margin-right: 7px;
   box-shadow: 1px 1px 10px #b9b8b8;
   padding: 23px;
+
+  @media (max-width:480px) {
+    margin-top: 145px;
+    margin-inline: auto;
+  }
 }
 
 .booking-list {

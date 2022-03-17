@@ -161,6 +161,10 @@ h3 {
   display: flex;
   justify-content: space-between;
 
+  @media (max-width: 480px) {
+    display: inline;   
+  }
+
   h4 {
     color: #1cbecf;
     font-family: 'Roboto', sans-serif;
