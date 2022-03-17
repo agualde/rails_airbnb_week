@@ -41,6 +41,9 @@
 
 .sign-in {
   display: flex;
+  @media (max-width:480px) {
+    padding-right: 0;
+  }
 }
 
   #host-btn {
@@ -53,6 +56,11 @@
   &:hover {
     opacity: 0.9;
   }
+
+    @media (max-width:480px) {
+      padding: 0;
+      margin: 0;
+   }
   }
 
 #left-cluster-navbar {
