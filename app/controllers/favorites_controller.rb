@@ -2,23 +2,30 @@ class FavoritesController < ApplicationController
 
   def create
     @favorite = Favorite.new
+    @favorites = Favorite.where(user_id: current_user)
     @flat = Flat.find(params[:flat_id])
     @favorite.flat = @flat
     @favorite.user = current_user
     authorize @favorite
     @favorite.save!
-    redirect_to flats_path(anchor: @flat.id)
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'shared/favouriteDelete', locals: { favorites: @favorites, flat: @flat }, formats: [:html] }
+    end
   end
 
-  def update
+  def destroy
     @favorite = Favorite.find(params[:id])
+    @favorites = Favorite.where(user_id: current_user)
     @flat = Flat.find(params[:flat_id])
     @favorite.flat = @flat
     @favorite.user = current_user
-    @favorite.toggle!(:favorite)
     authorize @favorite
-    @favorite.save
-    redirect_to flats_path(anchor: @flat.id)
+    @favorite.destroy
+    respond_to do |format|
+      format.html # Follow regular flow of Rails
+      format.text { render partial: 'shared/favouriteCreate', locals: { flat: @flat, favorites: @favorites }, formats: [:html] }
+    end
   end
 
   private
@@ -27,3 +34,4 @@ class FavoritesController < ApplicationController
     params.require(:favorites).permit(:id, :favorite)
   end
 end
+  

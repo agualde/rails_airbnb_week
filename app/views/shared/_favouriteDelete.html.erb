@@ -1,0 +1,3 @@
+<div data-favourites-target="favourite">
+    <%= link_to "♥",  flat_favorite_path(flat, @favorites.find_by(flat_id: flat).id), method: :delete, class: "#{ @favorites.find_by(flat_id: flat).favorite ? "red" : "grey" }", data: { controller: "favourite", action: "click->favourite#deleteFavourite" } %>
+</div> 

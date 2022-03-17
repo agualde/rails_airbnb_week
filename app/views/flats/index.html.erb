@@ -36,11 +36,15 @@
         <div class="my-card-header">
               <h3><%= link_to flat.title, flat_path(flat), class: "btn mt-2", id: "title-index-card" %></h3>
 
-              <%= link_to "♥", flat_favorites_path(flat), method: :create, class: "grey #{@favorites.find_by(flat_id: flat).present? ? "d-none" : ""}" %>
+              <div data-favourites-target="favourite">
+                <%= link_to "♥", flat_favorites_path(flat), method: :create, class: "grey #{@favorites.find_by(flat_id: flat).present? ? "d-none" : ""}", data: { controller: "favourite", action: "click->favourite#favourite" } %>
+              </div> 
 
               <% if @favorites.find_by(flat_id: flat).present? %>
 
-              <%= link_to "♥",  flat_favorite_path(flat, @favorites.find_by(flat_id: flat).id), method: :patch, class: "#{ @favorites.find_by(flat_id: flat).favorite ? "red" : "grey" }" %>
+              <div data-favourites-target="favourite">
+                <%= link_to "♥",  flat_favorite_path(flat, @favorites.find_by(flat_id: flat).id), method: :delete, class: "#{ @favorites.find_by(flat_id: flat).favorite ? "red" : "grey" }", data: { controller: "favourite", action: "click->favourite#deleteFavourite" } %>
+              </div> 
               <% else %>
 
 
