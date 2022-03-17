@@ -86,7 +86,10 @@
 }
 
 #btn-margin {
-  margin-right: 200px;
+  margin-right: 200px;  
+  @media (max-width:480px) {
+    margin-right: 0px;  
+  }
 }
 
 .mb-3 {
@@ -111,6 +114,9 @@ h1 {
   justify-content: end;
   width: 700px;
   margin-top: 20px;
+  @media (max-width:480px) {
+    display: none;
+  }
 }
 
 #svg_home2 {
@@ -121,6 +127,9 @@ h1 {
   justify-content: end;
   width: 700px;
   margin-top: 20px;
+  @media (max-width:480px) {
+    display: none;
+  }
 
 }
 
@@ -128,5 +137,8 @@ h1 {
   position: absolute;
   top:50px;
   z-index: -1;
-  width: 1000px;
+  width: 1000px;  
+  @media (max-width:480px) {
+    display: none;
+  }
 }
