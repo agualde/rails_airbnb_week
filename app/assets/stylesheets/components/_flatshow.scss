@@ -78,6 +78,7 @@
   margin-right: 435px;
   @media (max-width:480px) {
     width: 100%;
+    height: fit-content;
   }
 }
 
@@ -102,7 +103,7 @@
   padding: 23px;
 
   @media (max-width:480px) {
-    margin-top: 145px;
+    margin-top: 45px;
     margin-inline: auto;
   }
 }
