@@ -175,3 +175,14 @@
       }
     }
   }
+
+  .space {
+    @media (max-width:480px) {
+      justify-content: space-between;
+    }
+    h6 {
+      @media (max-width:480px) {
+        padding: 0;
+      }
+    }
+  }
