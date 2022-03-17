@@ -40,6 +40,10 @@
   align-content: center;
   justify-content: space-between;
 
+  h1 {
+    font-size: 48px;
+  }
+
   h3{
     margin: 0;
     padding-right: 16px;
@@ -186,5 +190,19 @@
       @media (max-width:480px) {
         padding: 0;
       }
+    }
+  }
+
+  .to-hide {
+    @media (max-width:480px) {
+      display: none;
+      height: auto;
+    }
+  }
+
+  .carusel {
+    display: none;
+    @media (max-width:480px) {
+      display: block;
     }
   }
