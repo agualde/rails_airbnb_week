@@ -3,3 +3,10 @@
   justify-content: space-around;
   margin-left: -39px;
 }
+
+.form-space {
+  @media (max-width: 480px) {
+    display: none;
+  }
+
+}
