@@ -67,6 +67,9 @@
  flex-direction: column;
  padding-top: 8px;
   border-top: 1px solid #f1eaea;
+  @media (max-width:480px) {
+    margin-left: 11px;
+  }
 }
 
 .head {
