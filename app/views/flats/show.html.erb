@@ -13,7 +13,7 @@
 
               <% if @favorites.find_by(flat_id: @flat).present? %>
 
-              <%= link_to "♥",  flat_favorite_path(@flat, @favorites.find_by(flat_id: @flat).id), method: :patch, class: "#{ @favorites.find_by(flat_id: @flat).favorite ? "red" : "grey" }" %>
+              <%= link_to "♥",  flat_favorite_path(@flat, @favorites.find_by(flat_id: @flat).id), method: :delete, class: "#{ @favorites.find_by(flat_id: @flat).favorite ? "red" : "grey" }" %>
               <% else %>
 
 

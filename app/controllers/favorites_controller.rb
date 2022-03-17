@@ -9,7 +9,7 @@ class FavoritesController < ApplicationController
     authorize @favorite
     @favorite.save!
     respond_to do |format|
-      format.html # Follow regular flow of Rails
+      format.html { redirect_to flat_path(@flat)}
       format.text { render partial: 'shared/favouriteDelete', locals: { favorites: @favorites, flat: @flat }, formats: [:html] }
     end
   end
@@ -23,7 +23,7 @@ class FavoritesController < ApplicationController
     authorize @favorite
     @favorite.destroy
     respond_to do |format|
-      format.html # Follow regular flow of Rails
+      format.html { redirect_to flat_path(@flat)}
       format.text { render partial: 'shared/favouriteCreate', locals: { flat: @flat, favorites: @favorites }, formats: [:html] }
     end
   end
