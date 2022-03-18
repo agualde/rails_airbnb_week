@@ -29,6 +29,9 @@
 
 #book-btn {
   width: 270px;
+  @media (max-width: 480px) {
+    width: auto;
+  }
 }
 
 #black-hover {
