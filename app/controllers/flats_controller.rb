@@ -9,7 +9,7 @@ class FlatsController < ApplicationController
     else
       $total = 1
     end
-    @flats = policy_scope(Flat).order('created_at DESC')
+    @flats = policy_scope(Flat).order('created_at DESC').paginate(page: params[:page], per_page: 16)
     @markers = @flats.geocoded.map do |flat|
       {
         lat: flat.latitude,
@@ -18,7 +18,7 @@ class FlatsController < ApplicationController
       if params[:Location].present?
         @flats = @flats.where(location: params[:Location])
       else
-        @flats
+        @flats.paginate(page: params[:page], per_page: 1)
       end
     end
   end
