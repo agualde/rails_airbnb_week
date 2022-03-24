@@ -14,13 +14,13 @@
         <div id="carouselExampleDark<%= index %>" class="carousel carousel-dark slide img-container">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="<%= cl_image_path flat.photos[0].key, alt:"Image of the flat booked" %>" class="d-block w-100 h-100 carouselHome" alt="house 1" data-interval="0">
+              <img src="<%= cl_image_path flat.photos[0].key, alt:"Image of the flat booked" %>" class="d-block w-100 h-100 carouselHome" alt="house 1" data-interval="0" style="object-fit: cover;">
             </div>
             <div class="carousel-item" >
-              <img src="<%= cl_image_path flat.photos[1].key, alt:"Image of the flat booked" %>" class="d-block w-100 h-100 carouselHome" alt="house 2" data-interval="0">
+              <img src="<%= cl_image_path flat.photos[1].key, alt:"Image of the flat booked" %>" class="d-block w-100 h-100 carouselHome" alt="house 2" data-interval="0" style="object-fit: cover;">
             </div>
             <div class="carousel-item">
-              <img src="<%= cl_image_path flat.photos[2].key, alt:"Image of the flat booked" %>" class="d-block w-100 h-100 carouselHome" alt="house 3" data-interval="0">
+              <img src="<%= cl_image_path flat.photos[2].key, alt:"Image of the flat booked" %>" class="d-block w-100 h-100 carouselHome" alt="house 3" data-interval="0" style="object-fit: cover;">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark<%= index %>" data-bs-slide="prev">

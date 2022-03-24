@@ -1,5 +1,8 @@
 class Flat < ApplicationRecord
   has_many_attached :photos
+  validates :photos, limit: { min: 3, max: 4, message: 'must be at least three (3)' }
+  validates :photos, size: { between: 1.kilobyte..5.megabytes , message: 'size is too big (max 5MB)' }, content_type: ['image/png', 'image/jpeg']
+
   belongs_to :user
   has_many :bookings, dependent: :destroy
   validates :title, :description, :address, :capacity, :price, presence: true
